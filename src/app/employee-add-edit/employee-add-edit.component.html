@@ -1,0 +1,49 @@
+<div matDialogTitle>
+    <h1>Zaposlenik</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+<div matDialogContent class="content">
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Ime</mat-label>
+            <input matInput type="text" placeholder="Unesi ime" formControlName="ime">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Prezime</mat-label>
+            <input matInput type="text" placeholder="Unesi prezime" formControlName="prezime">
+          </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Unesi email adresu" formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Datum Zaposlenja</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="datumZaposlenja">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Pozicija</mat-label>
+            <mat-select formControlName="pozicija">
+              <mat-option *ngFor="let val of pozicija" [value]="val">
+                {{ val }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+</div>
+<div matDialogActions class="action">
+    <button mat-raised-button>Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+</div>
+
+</form>
