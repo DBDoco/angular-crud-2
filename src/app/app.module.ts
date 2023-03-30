@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ObserversModule } from '@angular/cdk/observers';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent, EmployeeAddEditComponent],
@@ -42,6 +43,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ObserversModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

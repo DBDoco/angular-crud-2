@@ -1,20 +1,63 @@
 {
   "employees": [
     {
-      "ime": "test1",
-      "prezime": "test1",
-      "email": "test1@mail.com",
-      "datumZaposlenja": "2023-03-08T23:00:00.000Z",
-      "pozicija": "Back-end",
+      "ime": "test4",
+      "prezime": "test",
+      "email": "test@mail.com",
+      "datumZaposlenja": "2023-03-05T23:00:00.000Z",
+      "pozicija": [
+        "Front-end",
+        "Back-end"
+      ],
       "id": 1
     },
     {
-      "ime": "",
-      "prezime": "",
-      "email": "",
-      "datumZaposlenja": "",
-      "pozicija": "",
-      "id": 2
+      "ime": "test4",
+      "prezime": "test4",
+      "email": "test4@mail.com",
+      "datumZaposlenja": "2023-03-15T23:00:00.000Z",
+      "pozicija": "Back-end",
+      "id": 4
+    },
+    {
+      "ime": "test2",
+      "prezime": "test2",
+      "email": "test2@mail.com",
+      "datumZaposlenja": "2023-03-08T23:00:00.000Z",
+      "pozicija": "Administracija",
+      "id": 5
+    },
+    {
+      "ime": "test23",
+      "prezime": "test23",
+      "email": "test23@mail.com",
+      "datumZaposlenja": "2023-03-02T23:00:00.000Z",
+      "pozicija": "Back-end",
+      "id": 6
+    },
+    {
+      "ime": "test4",
+      "prezime": "test4",
+      "email": "test4@mail.com",
+      "datumZaposlenja": "2023-03-15T23:00:00.000Z",
+      "pozicija": "Back-end",
+      "id": 7
+    },
+    {
+      "ime": "test2",
+      "prezime": "test2",
+      "email": "test2@mail.com",
+      "datumZaposlenja": "2023-03-08T23:00:00.000Z",
+      "pozicija": "Administracija",
+      "id": 8
+    },
+    {
+      "ime": "test23",
+      "prezime": "test23",
+      "email": "test23@mail.com",
+      "datumZaposlenja": "2023-03-02T23:00:00.000Z",
+      "pozicija": "Back-end",
+      "id": 9
     }
   ]
 }

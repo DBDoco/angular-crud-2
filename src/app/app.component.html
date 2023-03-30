@@ -1,61 +1,84 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
   <span>Crud - ver 2</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button (click)="openAddEditEmployee()">Dodaj zaposlenika</button>
-
+  <button mat-raised-button (click)="openAddEditEmployee()">
+    Dodaj zaposlenika
+  </button>
 </mat-toolbar>
 
+<div class="main-body">
   <mat-form-field>
     <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input />
   </mat-form-field>
-  
+
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
-  
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
       </ng-container>
-  
+
       <ng-container matColumnDef="ime">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ime </th>
-        <td mat-cell *matCellDef="let row"> {{row.ime}}% </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ime</th>
+        <td mat-cell *matCellDef="let row">{{ row.ime }}</td>
       </ng-container>
-  
+
       <ng-container matColumnDef="prezime">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Prezime </th>
-        <td mat-cell *matCellDef="let row"> {{row.prezime}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Prezime</th>
+        <td mat-cell *matCellDef="let row">{{ row.prezime }}</td>
       </ng-container>
-  
+
       <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let row">{{ row.email }}</td>
       </ng-container>
 
       <ng-container matColumnDef="datumZaposlenja">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Datum Zaposlenja </th>
-        <td mat-cell *matCellDef="let row"> {{row.datumZaposlenja | date}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Datum Zaposlenja
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.datumZaposlenja | date : "dd/MM/yyyy" }}
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="pozicija">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Pozicija </th>
-        <td mat-cell *matCellDef="let row"> {{row.pozicija}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Pozicija</th>
+        <td mat-cell *matCellDef="let row" style="line-height:50px;">
+          {{ row.pozicija }}
+          <button
+            class="edit-button"
+            mat-icon-button
+            color="primary"
+            (click)="openEditEmployee(row)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            class="edit-button"
+            mat-icon-button
+            color="warn"
+            (click)="deleteEmployee(row.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
       </ng-container>
-  
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
       <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
       </tr>
     </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-  </div>
-  
-  
 
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page of users"
+    ></mat-paginator>
+  </div>
+</div>
